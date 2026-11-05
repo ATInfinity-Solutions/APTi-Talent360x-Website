@@ -1,0 +1,50 @@
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # Force HTTPS and the bare domain
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://talent360x.com%{REQUEST_URI} [L,R=301]
+
+  # Renamed / removed pages
+  RewriteRule ^solutions/sourcing-partners/?$ /solutions/strategic-partners/ [L,R=301]
+  RewriteRule ^solutions/assessment-providers/?$ /solutions/ [L,R=301]
+  RewriteRule ^solutions/higher-education-counsellors/?$ /solutions/career-counsellors/ [L,R=301]
+  RewriteRule ^(demo|dashboard-preview|request-demo)/?$ /contact/ [L,R=301]
+  RewriteRule ^login/?$ /signin/ [L,R=301]
+  RewriteRule ^register/?$ /signup/ [L,R=301]
+
+  # Add the trailing slash used by the static export
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_URI} !/$
+  RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI}/index.html -f
+  RewriteRule ^(.*)$ /$1/ [L,R=301]
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  <FilesMatch "\.html$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/javascript application/json application/xml image/svg+xml
+</IfModule>

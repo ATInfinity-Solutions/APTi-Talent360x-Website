@@ -1,0 +1,179 @@
+@import "tailwindcss";
+
+/* Brand tokens mirror the live talent360x.com theme. */
+:root {
+  --background: hsl(214 40% 98%);
+  --foreground: hsl(222 47% 11%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222 47% 11%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222 47% 11%);
+  --primary: hsl(217 86% 38%);
+  --primary-foreground: hsl(0 0% 100%);
+  --secondary: hsl(214 32% 94%);
+  --secondary-foreground: hsl(222 47% 14%);
+  --muted: hsl(214 28% 94%);
+  --muted-foreground: hsl(215 16% 42%);
+  --accent: hsl(28 100% 96%);
+  --accent-foreground: hsl(24 95% 32%);
+  --destructive: hsl(356 78% 50%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(214 24% 88%);
+  --input: hsl(214 24% 88%);
+  --ring: hsl(217 86% 38%);
+  --radius: 0.75rem;
+
+  --ink: hsl(222 55% 10%);
+  --ink-foreground: hsl(210 40% 98%);
+  --flame: hsl(28 100% 52%);
+  --flame-soft: hsl(38 100% 55%);
+  --aptired: hsl(356 78% 50%);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-flame: var(--flame);
+  --color-flame-soft: var(--flame-soft);
+  --color-aptired: var(--aptired);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@utility text-gradient-brand {
+  background-image: linear-gradient(105deg, #0f56c7, #ff7c0a 55%, #ffab1a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-brand {
+  background-image: linear-gradient(105deg, #0e52be, #ff7c0a 70%, #ffab1a);
+}
+
+@utility bg-gradient-hero {
+  background-image:
+    radial-gradient(55% 45% at 78% 8%, hsl(217 86% 42% / 0.45), transparent),
+    radial-gradient(40% 35% at 8% 88%, hsl(28 100% 52% / 0.18), transparent),
+    radial-gradient(30% 30% at 50% 50%, hsl(356 78% 50% / 0.06), transparent);
+}
+
+@utility container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.25rem;
+  @media (width >= 40rem) {
+    padding-inline: 2rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Transform-only: animating opacity here left dropdowns partially transparent over the dark hero in Chrome. */
+@keyframes menu-in {
+  from {
+    transform: translateY(-6px);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@utility animate-menu-in {
+  animation: menu-in 160ms ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(var(--slide-from, 2rem));
+  }
+  to {
+    transform: none;
+  }
+}
+
+@utility animate-slide-in {
+  animation: slide-in 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/*
+ * Dark hero band in the live-site style. Re-scoping the theme tokens lets existing light-theme
+ * markup (cards, badges, buttons, inputs) render as glass-on-ink without per-page rewrites.
+ */
+.page-hero {
+  --background: hsl(222 55% 10%);
+  --foreground: hsl(210 40% 98%);
+  --card: hsl(0 0% 100% / 0.05);
+  --card-foreground: hsl(210 40% 98%);
+  --popover: hsl(222 48% 14%);
+  --popover-foreground: hsl(210 40% 98%);
+  --primary: hsl(28 100% 52%);
+  --primary-foreground: hsl(222 55% 10%);
+  --secondary: hsl(0 0% 100% / 0.08);
+  --secondary-foreground: hsl(210 40% 98%);
+  --muted: hsl(0 0% 100% / 0.06);
+  --muted-foreground: hsl(0 0% 100% / 0.65);
+  --border: hsl(0 0% 100% / 0.12);
+  --input: hsl(0 0% 100% / 0.16);
+  position: relative;
+  overflow: hidden;
+  color: var(--foreground);
+  background-color: var(--ink);
+  background-image:
+    radial-gradient(55% 45% at 78% 8%, hsl(217 86% 42% / 0.45), transparent),
+    radial-gradient(40% 35% at 8% 88%, hsl(28 100% 52% / 0.18), transparent);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background font-sans text-foreground antialiased;
+    overflow-x: clip;
+  }
+}
