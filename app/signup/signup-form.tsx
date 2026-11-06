@@ -118,6 +118,7 @@ export function SignUpForm() {
   }, [])
 
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle")
+  const [error, setError] = useState("")
   const active = roles.find((r) => r.slug === role) ?? roles[0]
   const isIndividual = individualRoles.has(role)
 
@@ -126,10 +127,12 @@ export function SignUpForm() {
     const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>
     delete data.password
     setStatus("sending")
+    setError("")
     try {
       await submitLead("signup", { role: active.label, ...(plan && { plan }), ...data })
       setStatus("done")
-    } catch {
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.")
       setStatus("error")
     }
   }
@@ -231,7 +234,7 @@ export function SignUpForm() {
                   </label>
                 </div>
                 {status === "error" && (
-                  <p className="text-sm text-destructive">Something went wrong. Please try again.</p>
+                  <p className="text-sm text-destructive">{error || "Something went wrong. Please try again."}</p>
                 )}
                 <Button className="w-full" size="lg" disabled={!agreed || status === "sending"}>
                   {status === "sending" ? "Creating account..." : "Create Account"} <ArrowRight />

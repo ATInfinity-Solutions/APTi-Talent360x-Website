@@ -1,5 +1,4 @@
 import Link from "next/link"
-import { Mail } from "lucide-react"
 import { Logo } from "@/components/layout/logo"
 import { footerGroups, legalLinks } from "@/lib/navigation"
 import { site } from "@/lib/site"
@@ -38,13 +37,6 @@ export function SiteFooter() {
               The AI-powered talent ecosystem connecting learners, institutions, employers, partners and funders through
               one intelligent platform.
             </p>
-            <a
-              href={`mailto:${site.email}`}
-              className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary"
-            >
-              <Mail className="size-4 text-primary" />
-              {site.email}
-            </a>
             <div className="mt-5 flex items-center gap-4">
               {socials.map((s) => (
                 <a
