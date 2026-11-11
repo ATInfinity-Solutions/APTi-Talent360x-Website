@@ -8,7 +8,7 @@ import { primaryNav } from "@/lib/navigation"
 export const metadata = {
   title: "Solutions",
   description:
-    "Talent360x solutions for candidates, students, alumni, institutions, universities abroad, counsellors, employers, staffing firms, training providers, banks, sponsors and strategic partners.",
+    "Talent360x solutions for working professionals, students, alumni, institutions, universities abroad, counsellors, employers, staffing firms, training providers, banks, sponsors and strategic partners.",
 }
 
 export default function SolutionsPage() {

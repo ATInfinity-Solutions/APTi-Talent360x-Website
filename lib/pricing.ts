@@ -28,7 +28,7 @@ const trial = signUp("Start Free Trial")
 const sales = { label: "Contact Sales", href: "/contact" }
 
 const pricing: Record<string, PricingModel> = {
-  candidates: {
+  "working-professionals": {
     kind: "plans",
     plans: [
       {
@@ -233,14 +233,14 @@ const pricing: Record<string, PricingModel> = {
         price: "Free",
         period: "forever",
         description: "Perfect for early-stage companies",
-        features: ["Up to 3 active job posts", "Basic candidate search", "5 candidate contacts/month", "Standard job visibility", "Email support"],
+        features: ["Up to 3 active job posts", "Basic working professional search", "5 working professional contacts/month", "Standard job visibility", "Email support"],
         cta: signUp(),
       },
       {
         name: "Growth",
         price: 15000,
         description: "Scale your hiring with powerful tools",
-        features: ["Up to 15 active job posts", "AI-powered candidate matching", "50 candidate contacts/month", "Featured job listings", "Analytics dashboard", "ATS integration"],
+        features: ["Up to 15 active job posts", "AI-powered working professional matching", "50 working professional contacts/month", "Featured job listings", "Analytics dashboard", "ATS integration"],
         cta: trial,
         popular: true,
       },
@@ -248,7 +248,7 @@ const pricing: Record<string, PricingModel> = {
         name: "Enterprise",
         price: "Custom",
         description: "Full-scale hiring solution for large teams",
-        features: ["Unlimited job posts", "Advanced AI matching & ranking", "Unlimited candidate contacts", "Advanced analytics & reporting", "Dedicated account manager", "SLA guarantee"],
+        features: ["Unlimited job posts", "Advanced AI matching & ranking", "Unlimited working professional contacts", "Advanced analytics & reporting", "Dedicated account manager", "SLA guarantee"],
         cta: sales,
       },
     ],
@@ -261,7 +261,7 @@ const pricing: Record<string, PricingModel> = {
         price: "Free",
         period: "forever",
         description: "Explore verified talent for your clients",
-        features: ["Up to 5 active requirements", "Verified talent search", "10 candidate contacts/month", "Email support"],
+        features: ["Up to 5 active requirements", "Verified talent search", "10 working professional contacts/month", "Email support"],
         cta: signUp(),
       },
       {

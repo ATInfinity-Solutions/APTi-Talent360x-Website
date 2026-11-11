@@ -6,7 +6,7 @@ import { PricingTabs } from "@/components/pricing/pricing-tabs"
 
 export const metadata = {
   title: "Pricing",
-  description: "Plans for every stakeholder on the Talent360x ecosystem - from candidates and students to institutions, employers, banks and sponsors.",
+  description: "Plans for every stakeholder on the Talent360x ecosystem - from working professionals and students to institutions, employers, banks and sponsors.",
 }
 
 export default function PricingPage() {

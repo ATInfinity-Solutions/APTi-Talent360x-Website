@@ -16,10 +16,10 @@ import { solutionGroups } from "@/lib/navigation"
 import { submitLead } from "@/lib/lead"
 const roles = solutionGroups.flatMap((g) => g.links).map((l) => ({ ...l, slug: l.href.split("/").pop()! }))
 
-const individualRoles = new Set(["candidates", "students", "alumni"])
+const individualRoles = new Set(["working-professionals", "students", "alumni"])
 
 const roleFeatures: Record<string, string[]> = {
-  candidates: [
+  "working-professionals": [
     "AI-powered job matching",
     "Skill gap analysis & recommendations",
     "Free training course access",
@@ -70,7 +70,7 @@ const roleFeatures: Record<string, string[]> = {
   ],
   employers: [
     "Post unlimited jobs",
-    "AI candidate scoring",
+    "AI working professional scoring",
     "Talent pipeline management",
     "Analytics dashboard",
     "ATS integration ready",
@@ -84,7 +84,7 @@ const roleFeatures: Record<string, string[]> = {
   ],
   "strategic-partners": [
     "Access live job requirements",
-    "Submit candidates easily",
+    "Submit working professionals easily",
     "Tiered commission structure",
     "Performance dashboard",
     "Milestone-based payouts",

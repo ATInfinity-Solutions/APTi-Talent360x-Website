@@ -17,11 +17,11 @@ import {
 import Link from "next/link"
 
 export const metadata = {
-  title: "For Candidates",
+  title: "For Working Professionals",
   description: "AI-powered job matching, skill development paths and verified credentials for job seekers.",
 }
 
-export default function CandidatesPage() {
+export default function WorkingProfessionalsPage() {
   const features = [
     {
       icon: Brain,
@@ -304,7 +304,7 @@ export default function CandidatesPage() {
               Ready to Find Your Dream Job?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-2xl mx-auto">
-              Join millions of candidates who found their perfect career match through our platform.
+              Join millions of working professionals who found their perfect career match through our platform.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="secondary" asChild>

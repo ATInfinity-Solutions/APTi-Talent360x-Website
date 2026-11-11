@@ -45,7 +45,7 @@ export default function PrivacyPage() {
               <ul className="list-disc pl-6 text-muted-foreground mb-4 space-y-2">
                 <li>To provide and maintain our services</li>
                 <li>To match you with relevant job opportunities</li>
-                <li>To connect employers with suitable candidates</li>
+                <li>To connect employers with suitable working professionals</li>
                 <li>To personalize your experience and recommendations</li>
                 <li>To communicate with you about services and updates</li>
                 <li>To improve our platform and develop new features</li>

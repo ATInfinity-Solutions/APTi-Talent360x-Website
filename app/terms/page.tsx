@@ -24,7 +24,7 @@ export default function TermsPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-semibold mb-4">2. Description of Service</h2>
               <p className="text-muted-foreground mb-4">
-                Talent360x is a talent ecosystem platform that connects candidates, employers, training providers, and
+                Talent360x is a talent ecosystem platform that connects working professionals, employers, training providers, and
                 strategic partners. Our services include job matching, training marketplace, and workforce management
                 tools.
               </p>

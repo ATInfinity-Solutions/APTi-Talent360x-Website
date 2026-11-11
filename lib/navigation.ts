@@ -36,8 +36,8 @@ export const solutionGroups: NavGroup[] = [
     label: "For Talent",
     links: [
       {
-        label: "Candidates",
-        href: "/solutions/candidates",
+        label: "Working Professionals",
+        href: "/solutions/working-professionals",
         description: "Verified profile, matched jobs",
         icon: UserRound,
       },

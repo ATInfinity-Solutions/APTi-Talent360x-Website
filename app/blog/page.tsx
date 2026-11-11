@@ -12,7 +12,7 @@ export default function BlogPage() {
   const featuredPost = {
     title: "The Future of AI-Powered Talent Matching in India",
     excerpt:
-      "How artificial intelligence is revolutionizing the way employers find candidates and job seekers discover opportunities in the Indian job market.",
+      "How artificial intelligence is revolutionizing the way employers find working professionals and job seekers discover opportunities in the Indian job market.",
     author: "Our Team",
     date: "January 10, 2026",
     readTime: "8 min read",

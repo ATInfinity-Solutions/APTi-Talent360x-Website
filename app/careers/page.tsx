@@ -140,7 +140,7 @@ export default function CareersPage() {
                 Build the Future of <span className="text-gradient-brand">Talent Ecosystems</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Join Aptinfinity Solutions LLP and help connect millions of candidates, employers, and training providers through
+                Join Aptinfinity Solutions LLP and help connect millions of working professionals, employers, and training providers through
                 AI-powered innovation.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

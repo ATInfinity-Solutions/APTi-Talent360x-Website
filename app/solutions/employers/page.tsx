@@ -29,29 +29,29 @@ export default function EmployersPage() {
       icon: Brain,
       title: "AI-Powered Talent Matching",
       description:
-        "Our intelligent algorithms analyze job requirements and match them with pre-screened candidates for faster, quality hiring.",
+        "Our intelligent algorithms analyze job requirements and match them with pre-screened working professionals for faster, quality hiring.",
     },
     {
       icon: FileSearch,
       title: "Smart Screening & Filtering",
       description:
-        "Automated resume parsing and skill-based filtering to surface the most relevant candidates instantly.",
+        "Automated resume parsing and skill-based filtering to surface the most relevant working professionals instantly.",
     },
     {
       icon: Globe,
       title: "Access Global Talent Pool",
-      description: "Tap into our network of 5 million+ pre-verified candidates across industries and geographies.",
+      description: "Tap into our network of 5 million+ pre-verified working professionals across industries and geographies.",
     },
     {
       icon: Shield,
       title: "Verified Credentials",
       description:
-        "All candidate credentials, certifications, and work history are pre-verified for trust and compliance.",
+        "All working professional credentials, certifications, and work history are pre-verified for trust and compliance.",
     },
     {
       icon: BarChart3,
       title: "Hiring Analytics Dashboard",
-      description: "Real-time insights into your hiring funnel, time-to-hire metrics, and candidate quality scores.",
+      description: "Real-time insights into your hiring funnel, time-to-hire metrics, and working professional quality scores.",
     },
     {
       icon: Zap,
@@ -63,15 +63,15 @@ export default function EmployersPage() {
   const benefits = [
     "Reduce time-to-hire by up to 60%",
     "Lower recruitment costs significantly",
-    "Access to pre-verified, skilled candidates",
-    "AI-driven candidate ranking and scoring",
+    "Access to pre-verified, skilled working professionals",
+    "AI-driven working professional ranking and scoring",
     "Integrated assessment and evaluation tools",
     "Compliance-ready hiring workflows",
   ]
 
   const stats = [
     { value: "60%", label: "Faster Hiring" },
-    { value: "5M+", label: "Candidate Network" },
+    { value: "5M+", label: "Working Professionals Network" },
     { value: "40%", label: "Cost Reduction" },
     { value: "10K+", label: "Companies Trust Us" },
   ]
@@ -100,7 +100,7 @@ export default function EmployersPage() {
                   Hire Smarter with <span className="text-gradient-brand">AI-Driven</span> Talent Intelligence
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
-                  Access millions of pre-verified candidates, reduce hiring time by 60%, and make data-driven hiring
+                  Access millions of pre-verified working professionals, reduce hiring time by 60%, and make data-driven hiring
                   decisions with our AI-powered platform.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -135,19 +135,19 @@ export default function EmployersPage() {
                       { name: "Rahul M.", score: 96, skills: ["React", "Node.js", "AWS"] },
                       { name: "Priya S.", score: 94, skills: ["Python", "ML", "Docker"] },
                       { name: "Amit K.", score: 91, skills: ["Java", "Spring", "K8s"] },
-                    ].map((candidate, i) => (
+                    ].map((professional, i) => (
                       <div
                         key={i}
                         className="flex items-center justify-between p-4 rounded-lg bg-muted/50 hover:bg-muted transition-colors"
                       >
                         <div className="flex items-center gap-3">
                           <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-semibold">
-                            {candidate.name.charAt(0)}
+                            {professional.name.charAt(0)}
                           </div>
                           <div>
-                            <p className="font-medium text-foreground">{candidate.name}</p>
+                            <p className="font-medium text-foreground">{professional.name}</p>
                             <div className="flex gap-1 mt-1">
-                              {candidate.skills.map((skill, j) => (
+                              {professional.skills.map((skill, j) => (
                                 <span key={j} className="text-xs px-1.5 py-0.5 bg-muted rounded text-muted-foreground">
                                   {skill}
                                 </span>
@@ -156,14 +156,14 @@ export default function EmployersPage() {
                           </div>
                         </div>
                         <div className="text-right">
-                          <span className="text-lg font-bold text-primary">{candidate.score}%</span>
+                          <span className="text-lg font-bold text-primary">{professional.score}%</span>
                           <p className="text-xs text-muted-foreground">Match</p>
                         </div>
                       </div>
                     ))}
                   </div>
                   <Button className="w-full mt-4 bg-transparent" variant="outline">
-                    View All Candidates
+                    View All Working Professionals
                   </Button>
                 </div>
               </div>
@@ -234,13 +234,13 @@ export default function EmployersPage() {
                 {
                   step: "02",
                   title: "AI Matching",
-                  description: "Our AI instantly matches your job with the most relevant candidates.",
+                  description: "Our AI instantly matches your job with the most relevant working professionals.",
                   icon: Sparkles,
                 },
                 {
                   step: "03",
                   title: "Review & Assess",
-                  description: "Use built-in assessments and interviews to evaluate candidates.",
+                  description: "Use built-in assessments and interviews to evaluate working professionals.",
                   icon: FileSearch,
                 },
                 {

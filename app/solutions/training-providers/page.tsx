@@ -56,7 +56,7 @@ export default function TrainingProvidersPage() {
       icon: Sparkles,
       title: "AI-Powered Recommendations",
       description:
-        "Our AI recommends your courses to candidates with matching skill gaps, driving qualified enrollments.",
+        "Our AI recommends your courses to working professionals with matching skill gaps, driving qualified enrollments.",
     },
   ]
 
@@ -223,7 +223,7 @@ export default function TrainingProvidersPage() {
                 {
                   step: "03",
                   title: "Reach Learners",
-                  description: "AI recommends your courses to candidates with matching skill needs.",
+                  description: "AI recommends your courses to working professionals with matching skill needs.",
                   icon: Users,
                 },
                 {

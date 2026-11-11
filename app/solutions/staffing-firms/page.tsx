@@ -17,7 +17,7 @@ import {
 
 export const metadata = {
   title: "For Staffing Firms",
-  description: "Source from a verified, AI-ranked talent pool and submit candidates with explainable match scores.",
+  description: "Source from a verified, AI-ranked talent pool and submit working professionals with explainable match scores.",
 }
 
 export default function StaffingFirmsPage() {
@@ -58,7 +58,7 @@ export default function StaffingFirmsPage() {
     {
       icon: Shield,
       title: "Verified Talent",
-      description: "All candidates are skill-assessed and background verified",
+      description: "All working professionals are skill-assessed and background verified",
     },
     {
       icon: Building2,

@@ -14,6 +14,7 @@ ErrorDocument 404 /404.html
   RewriteRule ^solutions/sourcing-partners/?$ /solutions/strategic-partners/ [L,R=301]
   RewriteRule ^solutions/assessment-providers/?$ /solutions/ [L,R=301]
   RewriteRule ^solutions/higher-education-counsellors/?$ /solutions/career-counsellors/ [L,R=301]
+  RewriteRule ^solutions/candidates/?$ /solutions/working-professionals/ [L,R=301]
   RewriteRule ^(demo|dashboard-preview|request-demo)/?$ /contact/ [L,R=301]
   RewriteRule ^login/?$ /signin/ [L,R=301]
   RewriteRule ^register/?$ /signup/ [L,R=301]

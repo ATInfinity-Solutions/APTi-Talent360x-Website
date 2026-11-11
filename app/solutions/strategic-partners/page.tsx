@@ -35,7 +35,7 @@ export default function StrategicPartnersPage() {
       icon: Target,
       title: "Smart Job Matching",
       description:
-        "Our AI matches your candidate pool with the most relevant opportunities, maximizing placement success.",
+        "Our AI matches your working professional pool with the most relevant opportunities, maximizing placement success.",
     },
     {
       icon: DollarSign,
@@ -45,8 +45,8 @@ export default function StrategicPartnersPage() {
     },
     {
       icon: Shield,
-      title: "Verified Candidate Profiles",
-      description: "Upload and verify candidate credentials through our platform, building trust with employers.",
+      title: "Verified Working Professional Profiles",
+      description: "Upload and verify working professional credentials through our platform, building trust with employers.",
     },
     {
       icon: BarChart3,
@@ -56,14 +56,14 @@ export default function StrategicPartnersPage() {
     {
       icon: Zap,
       title: "Fast-Track Submissions",
-      description: "Priority submission queue for top-performing partners. Get your candidates seen first.",
+      description: "Priority submission queue for top-performing partners. Get your working professionals seen first.",
     },
   ]
 
   const benefits = [
     "Direct access to enterprise hiring requirements",
     "Competitive commission rates with timely payouts",
-    "Real-time visibility into candidate status",
+    "Real-time visibility into working professional status",
     "AI-powered job matching for your talent pool",
     "Dedicated partner success manager",
     "Performance-based incentives and bonuses",
@@ -95,7 +95,7 @@ export default function StrategicPartnersPage() {
                 </h1>
                 <p className="text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
                   Sourcing agencies, channel and technology partners access verified hiring requirements from top
-                  employers, submit candidates seamlessly, and earn competitive commissions with transparent payouts.
+                  employers, submit working professionals seamlessly, and earn competitive commissions with transparent payouts.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
@@ -224,13 +224,13 @@ export default function StrategicPartnersPage() {
                 {
                   step: "02",
                   title: "Access Requirements",
-                  description: "Browse and accept hiring requirements that match your candidate pool.",
+                  description: "Browse and accept hiring requirements that match your working professional pool.",
                   icon: Target,
                 },
                 {
                   step: "03",
-                  title: "Submit Candidates",
-                  description: "Upload verified candidate profiles and track their progress in real-time.",
+                  title: "Submit Working Professionals",
+                  description: "Upload verified working professional profiles and track their progress in real-time.",
                   icon: Zap,
                 },
                 {

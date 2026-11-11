@@ -1,5 +1,5 @@
 export const stakeholderRoles = [
-  { value: "candidate", label: "Job Seeker / Candidate" },
+  { value: "working-professional", label: "Working Professionals" },
   { value: "student", label: "Student" },
   { value: "alumni", label: "Alumni" },
   { value: "institution", label: "Educational Institution" },

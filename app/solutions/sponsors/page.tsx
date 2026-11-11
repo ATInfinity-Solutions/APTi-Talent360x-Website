@@ -43,7 +43,7 @@ export default function SponsorsPage() {
       description: "Real-time tracking of training completion and placements",
     },
     { icon: Shield, title: "Compliance Ready", description: "Full documentation for CSR compliance and reporting" },
-    { icon: Users, title: "Talent Pipeline", description: "First access to sponsored candidates for hiring" },
+    { icon: Users, title: "Talent Pipeline", description: "First access to sponsored working professionals for hiring" },
   ]
 
   return (
@@ -80,7 +80,7 @@ export default function SponsorsPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[
                 { value: "100+", label: "Active Sponsors" },
-                { value: "50K+", label: "Candidates Trained" },
+                { value: "50K+", label: "Working Professionals Trained" },
                 { value: "75%", label: "Placement Rate" },
                 { value: "₹50Cr+", label: "CSR Deployed" },
               ].map((stat) => (
@@ -167,7 +167,7 @@ export default function SponsorsPage() {
                 <ul className="space-y-4">
                   {[
                     "Real-time training progress tracking",
-                    "Candidate demographics and diversity metrics",
+                    "Working Professionals demographics and diversity metrics",
                     "Skill assessment scores and certifications",
                     "Placement status and salary data",
                     "Geographic impact distribution",

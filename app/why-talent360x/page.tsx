@@ -77,7 +77,7 @@ export default function WhyTalent360xPage() {
               One ecosystem for the <span className="text-gradient-brand">entire talent lifecycle</span>
             </h1>
             <p className="mx-auto mb-8 max-w-2xl text-xl text-muted-foreground">
-              Our platform connects candidates, students, alumni, institutions, universities abroad, counsellors,
+              Our platform connects working professionals, students, alumni, institutions, universities abroad, counsellors,
               employers, staffing firms, training providers, banks, sponsors and strategic partners on one AI-powered
               platform - so every decision is informed by real outcomes.
             </p>

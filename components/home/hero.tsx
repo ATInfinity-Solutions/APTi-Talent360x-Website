@@ -27,7 +27,7 @@ export function Hero() {
             Connect talent. Build opportunity. <span className="text-gradient-brand">Improve outcomes.</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/65">
-            One AI-driven platform connecting candidates, students, alumni, institutions, employers, training providers,
+            One AI-driven platform connecting working professionals, students, alumni, institutions, employers, training providers,
             partners and funders. Transform how talent is discovered, developed and deployed.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">

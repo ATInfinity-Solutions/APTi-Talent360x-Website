@@ -20,7 +20,7 @@ export default function AboutPage() {
       icon: Users,
       title: "People Centric",
       description:
-        "Every decision we make is centered around creating better outcomes for candidates, employers, and partners in our ecosystem.",
+        "Every decision we make is centered around creating better outcomes for working professionals, employers, and partners in our ecosystem.",
     },
     {
       icon: Shield,
@@ -37,7 +37,7 @@ export default function AboutPage() {
   ]
 
   const stats = [
-    { value: "5M+", label: "Candidates" },
+    { value: "5M+", label: "Working Professionals" },
     { value: "10K+", label: "Employers" },
     { value: "500+", label: "Training Partners" },
     { value: "2.5K+", label: "Strategic Partners" },
@@ -58,7 +58,7 @@ export default function AboutPage() {
     },
     {
       name: "Customer Success",
-      description: "Dedicated team ensuring our candidates, employers, and partners achieve their goals.",
+      description: "Dedicated team ensuring our working professionals, employers, and partners achieve their goals.",
     },
   ]
 
@@ -107,7 +107,7 @@ export default function AboutPage() {
                   <h2 className="text-2xl font-bold text-foreground mb-4">Our Mission</h2>
                   <p className="text-muted-foreground leading-relaxed">
                     To democratize access to employment opportunities by building an AI-powered talent ecosystem that
-                    intelligently connects candidates with the right jobs, employers with quality talent, and training
+                    intelligently connects working professionals with the right jobs, employers with quality talent, and training
                     providers with real market demand. We aim to make the hiring process more efficient, transparent,
                     and equitable for everyone.
                   </p>
@@ -140,7 +140,7 @@ export default function AboutPage() {
               <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p className="mb-6">
                   Founded by Aptinfinity Solutions LLP, our platform was born from a simple observation: the talent ecosystem is
-                  fundamentally broken. Candidates struggle to find the right opportunities, employers waste resources
+                  fundamentally broken. Working professionals struggle to find the right opportunities, employers waste resources
                   on inefficient hiring, training providers lack visibility into real market demand, and sourcing
                   partners operate in silos.
                 </p>
@@ -151,7 +151,7 @@ export default function AboutPage() {
                   intelligently, and outcomes are optimized for everyone.
                 </p>
                 <p>
-                  Today, our platform serves millions of candidates, thousands of employers, and hundreds of training and
+                  Today, our platform serves millions of working professionals, thousands of employers, and hundreds of training and
                   strategic partners across India. We are just getting started on our mission to transform how the world
                   connects talent with opportunity.
                 </p>
