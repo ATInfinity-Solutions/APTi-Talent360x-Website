@@ -7,6 +7,7 @@ import { ChevronDown, Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Logo } from "@/components/layout/logo"
 import { MobileNav } from "@/components/layout/mobile-nav"
+import { RegionSwitcher } from "@/components/layout/region-switcher"
 import { opportunityLinks, primaryNav, solutionGroups, type NavGroup } from "@/lib/navigation"
 import { cn } from "@/lib/utils"
 
@@ -125,6 +126,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-2 lg:flex xl:gap-3">
+          <RegionSwitcher />
           <Button variant="ghost" className="px-3 text-[15px] xl:px-4 xl:text-base" asChild>
             <Link href={primaryNav.signIn.href}>{primaryNav.signIn.label}</Link>
           </Button>
@@ -133,16 +135,18 @@ export function SiteHeader() {
           </Button>
         </div>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          className="lg:hidden"
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          aria-expanded={mobileOpen}
-          onClick={() => setMobileOpen((v) => !v)}
-        >
-          {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
-        </Button>
+        <div className="flex items-center gap-2 lg:hidden">
+          <RegionSwitcher compact />
+          <Button
+            variant="ghost"
+            size="icon"
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
+            onClick={() => setMobileOpen((v) => !v)}
+          >
+            {mobileOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+          </Button>
+        </div>
       </div>
 
       {mobileOpen && <MobileNav onNavigate={() => setMobileOpen(false)} />}

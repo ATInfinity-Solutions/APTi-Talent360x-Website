@@ -5,12 +5,12 @@ import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import { CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useRegion } from "@/components/region-provider"
 import { stakeholderPricing, YEARLY_DISCOUNT, type Plan, type StakeholderPricing } from "@/lib/pricing"
+import { formatMoney } from "@/lib/region"
 import { cn } from "@/lib/utils"
 
 type Billing = "monthly" | "yearly"
-
-const rupees = (amount: number) => `₹${amount.toLocaleString("en-IN")}`
 
 export function PricingTabs() {
   const [active, setActive] = useState(0)
@@ -222,12 +222,15 @@ function PlanCard({
   slug: string
   billing: Billing
 }) {
-  const paid = typeof plan.price === "number" ? plan.price : null
+  const { region } = useRegion()
+  const paid =
+    typeof plan.price === "number" ? plan.price : plan.price === "₹0" || plan.price === "0" ? 0 : null
   const yearly = paid !== null && billing === "yearly"
   const fullYear = paid !== null ? paid * 12 : 0
   const yearPrice = Math.round(fullYear * (1 - YEARLY_DISCOUNT))
+  const money = (amount: number) => formatMoney(amount, region)
 
-  const display = paid === null ? plan.price : rupees(yearly ? yearPrice : paid)
+  const display = paid === null ? plan.price : money(yearly ? yearPrice : paid)
   const period = paid === null ? plan.period : yearly ? "/ year" : "/ month"
   const note =
     paid === null
@@ -235,7 +238,7 @@ function PlanCard({
         ? "Tailored to your organisation"
         : null
       : yearly
-        ? `${rupees(Math.round(yearPrice / 12))} / month, billed yearly`
+        ? `${money(Math.round(yearPrice / 12))} / month, billed yearly`
         : "Billed monthly"
 
   const href =
@@ -269,8 +272,8 @@ function PlanCard({
           <div className="mt-2 min-h-10 text-xs text-muted-foreground">
             {yearly && (
               <p>
-                <span className="mr-2 line-through">{rupees(fullYear)}</span>
-                <span className="font-semibold text-flame">Save {rupees(fullYear - yearPrice)}</span>
+                <span className="mr-2 line-through">{money(fullYear)}</span>
+                <span className="font-semibold text-flame">Save {money(fullYear - yearPrice)}</span>
               </p>
             )}
             {note && <p>{note}</p>}

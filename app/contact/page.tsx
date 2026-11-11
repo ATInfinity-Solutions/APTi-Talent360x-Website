@@ -4,6 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import { submitLead } from "@/lib/lead"
 import { solutionGroups } from "@/lib/navigation"
+import { AddressFields, useRegionPhonePlaceholder } from "@/components/forms/address-fields"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -20,6 +21,7 @@ const inquiryTypes = solutionGroups.flatMap((group) =>
 )
 
 export default function ContactPage() {
+  const phonePlaceholder = useRegionPhonePlaceholder()
   const [formSubmitted, setFormSubmitted] = useState(false)
   const [inquiryType, setInquiryType] = useState("")
   const [error, setError] = useState("")
@@ -30,9 +32,17 @@ export default function ContactPage() {
       setError("Please select an inquiry type.")
       return
     }
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>
+    if (!data.country || !data.region) {
+      setError("Please select a region.")
+      return
+    }
+    if (!data.postalCode?.trim()) {
+      setError("Please enter your PIN / ZIP code.")
+      return
+    }
     setError("")
     try {
-      const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>
       const inquiryLabel = inquiryTypes.find((t) => t.value === inquiryType)?.label ?? inquiryType
       await submitLead("contact", { ...data, inquiryType: inquiryLabel })
       setFormSubmitted(true)
@@ -95,7 +105,7 @@ export default function ContactPage() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="phone">Phone (Optional)</Label>
-                    <Input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" />
+                    <Input id="phone" name="phone" type="tel" placeholder={phonePlaceholder} />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="inquiryType">Inquiry Type</Label>
@@ -116,6 +126,9 @@ export default function ContactPage() {
                     <Label htmlFor="company">Company (Optional)</Label>
                     <Input id="company" name="company" placeholder="Your company name" />
                   </div>
+
+                  <AddressFields idPrefix="contact-" />
+
                   <div className="space-y-2">
                     <Label htmlFor="message">Message</Label>
                     <Textarea

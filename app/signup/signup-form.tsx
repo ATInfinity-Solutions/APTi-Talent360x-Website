@@ -11,6 +11,7 @@ import { Checkbox } from "@/components/ui/checkbox"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { AddressFields, useRegionPhonePlaceholder } from "@/components/forms/address-fields"
 import { solutionGroups } from "@/lib/navigation"
 import { submitLead } from "@/lib/lead"
 const roles = solutionGroups.flatMap((g) => g.links).map((l) => ({ ...l, slug: l.href.split("/").pop()! }))
@@ -105,6 +106,7 @@ const roleFeatures: Record<string, string[]> = {
 }
 
 export function SignUpForm() {
+  const phonePlaceholder = useRegionPhonePlaceholder()
   const [role, setRole] = useState(roles[0].slug)
   const [plan, setPlan] = useState("")
   const [agreed, setAgreed] = useState(false)
@@ -126,6 +128,16 @@ export function SignUpForm() {
     e.preventDefault()
     const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>
     delete data.password
+    if (!data.country || !data.region) {
+      setError("Please select a region.")
+      setStatus("error")
+      return
+    }
+    if (!data.postalCode?.trim()) {
+      setError("Please enter your PIN / ZIP code.")
+      setStatus("error")
+      return
+    }
     setStatus("sending")
     setError("")
     try {
@@ -209,8 +221,11 @@ export function SignUpForm() {
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" />
+                  <Input id="phone" name="phone" type="tel" placeholder={phonePlaceholder} />
                 </div>
+
+                <AddressFields idPrefix="signup-" />
+
                 <div className="space-y-2">
                   <Label htmlFor="password">Password</Label>
                   <Input id="password" name="password" type="password" placeholder="Create a strong password" required />

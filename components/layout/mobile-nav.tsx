@@ -4,6 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { RegionSwitcher } from "@/components/layout/region-switcher"
 import { opportunityLinks, primaryNav, solutionGroups } from "@/lib/navigation"
 import { cn } from "@/lib/utils"
 
@@ -54,6 +55,10 @@ export function MobileNav({ onNavigate }: { onNavigate: () => void }) {
         ))}
 
         <div className="mt-6 grid gap-3">
+          <div className="flex items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3">
+            <span className="text-sm font-semibold text-muted-foreground">Region</span>
+            <RegionSwitcher />
+          </div>
           <Button variant="flame" size="lg" asChild>
             <Link href={primaryNav.contact.href} onClick={onNavigate}>
               Contact Us
