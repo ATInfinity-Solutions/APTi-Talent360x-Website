@@ -129,12 +129,12 @@ export function SignUpForm() {
     const data = Object.fromEntries(new FormData(e.currentTarget)) as Record<string, string>
     delete data.password
     if (!data.country || !data.region) {
-      setError("Please select a region.")
+      setError("Please select a country / region.")
       setStatus("error")
       return
     }
-    if (!data.postalCode?.trim()) {
-      setError("Please enter your PIN / ZIP code.")
+    if (!data.state?.trim() || !data.city?.trim() || !data.postalCode?.trim()) {
+      setError("Please select state, city, and PIN / ZIP code.")
       setStatus("error")
       return
     }
